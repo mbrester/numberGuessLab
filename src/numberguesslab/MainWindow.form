@@ -89,6 +89,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuessActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnGuess.addActionListener(new NumberGuessActionListener(this));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnQuit">
       <Properties>

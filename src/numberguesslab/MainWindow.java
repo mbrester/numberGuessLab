@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package numberguesslab;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -41,6 +44,7 @@ public class MainWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnGuess.setText("Guess");
+        btnGuess.addActionListener(new NumberGuessActionListener(this));
         btnGuess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuessActionPerformed(evt);
@@ -114,22 +118,7 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuessActionPerformed
-    try{
-        ngs.setUserGuess(Integer.valueOf(txtNumberGuess.getText()));
-      int guess = ngs.compareNumbers();
-        switch(guess){
-        case -1: JOptionPane.showMessageDialog(rootPane, "Your Guess Was Too Low");
-            break;
-        case 0:  JOptionPane.showMessageDialog(rootPane, "Correct");   
-            break;
-        case 1: JOptionPane.showMessageDialog(rootPane, "Your Guess Was Too High");
-            break;
-        }
-    }catch(IllegalArgumentException e){
-        JOptionPane.showMessageDialog(rootPane, "Invalid Entry");
-     }
-    
-      
+ 
     }//GEN-LAST:event_btnGuessActionPerformed
 
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
@@ -175,6 +164,62 @@ public class MainWindow extends javax.swing.JFrame {
 
     public void setNgs(NumberGuessService ngs) {
         this.ngs = ngs;
+    }
+
+    public JButton getBtnGuess() {
+        return btnGuess;
+    }
+
+    public void setBtnGuess(JButton btnGuess) {
+        this.btnGuess = btnGuess;
+    }
+
+    public JButton getBtnQuit() {
+        return btnQuit;
+    }
+
+    public void setBtnQuit(JButton btnQuit) {
+        this.btnQuit = btnQuit;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getLblHighEndNumber() {
+        return lblHighEndNumber;
+    }
+
+    public void setLblHighEndNumber(JLabel lblHighEndNumber) {
+        this.lblHighEndNumber = lblHighEndNumber;
+    }
+
+    public JLabel getLblLowEndNumber() {
+        return lblLowEndNumber;
+    }
+
+    public void setLblLowEndNumber(JLabel lblLowEndNumber) {
+        this.lblLowEndNumber = lblLowEndNumber;
+    }
+
+    public JLabel getLblTo() {
+        return lblTo;
+    }
+
+    public void setLblTo(JLabel lblTo) {
+        this.lblTo = lblTo;
+    }
+
+    public JTextField getTxtNumberGuess() {
+        return txtNumberGuess;
+    }
+
+    public void setTxtNumberGuess(JTextField txtNumberGuess) {
+        this.txtNumberGuess = txtNumberGuess;
     }
 
     
