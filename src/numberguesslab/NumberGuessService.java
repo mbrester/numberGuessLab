@@ -60,7 +60,7 @@ public class NumberGuessService {
     }
 
     public void setRandomNumber() {
-        randomNumber = random.nextInt(highNumber)+lowNumber;
+        randomNumber = random.nextInt(highNumber - lowNumber)+lowNumber;
     }
    
     
