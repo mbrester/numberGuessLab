@@ -20,7 +20,11 @@ public class NumberGuessActionListener implements ActionListener {
     public NumberGuessActionListener(MainWindow window) {
         this.window = window;
     }
-    
+    /**
+     * This will start when the guess button is pressed, and will preform the task
+     * of comparing the number with the guess.
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         try{
