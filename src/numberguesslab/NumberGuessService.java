@@ -61,6 +61,9 @@ public class NumberGuessService {
 
     public void setRandomNumber() {
         randomNumber = random.nextInt(highNumber - lowNumber)+lowNumber;
+        if(randomNumber > highNumber || randomNumber < lowNumber){
+            setRandomNumber();
+        }
     }
    
     

@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package numberguesslab;
-
-import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author mbrester1
  */
 public class MainWindow extends javax.swing.JFrame {
-    NumberGuessService ngs;
+    private NumberGuessService ngs;
     
     /**
      * Creates new form MainWindow
@@ -116,19 +114,19 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuessActionPerformed
-    
+    try{
         ngs.setUserGuess(Integer.valueOf(txtNumberGuess.getText()));
       int guess = ngs.compareNumbers();
-        System.out.println(ngs.getRandomNumber());
-      
-      switch(guess){
+        switch(guess){
         case -1: JOptionPane.showMessageDialog(rootPane, "Your Guess Was Too Low");
             break;
         case 0:  JOptionPane.showMessageDialog(rootPane, "Correct");   
             break;
         case 1: JOptionPane.showMessageDialog(rootPane, "Your Guess Was Too High");
             break;
-  
+        }
+    }catch(IllegalArgumentException e){
+        JOptionPane.showMessageDialog(rootPane, "Invalid Entry");
      }
     
       
@@ -171,6 +169,15 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
 
+    public NumberGuessService getNgs() {
+        return ngs;
+    }
+
+    public void setNgs(NumberGuessService ngs) {
+        this.ngs = ngs;
+    }
+
+    
 
 
 }
